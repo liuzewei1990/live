@@ -16,7 +16,12 @@ const server = http.createServer((req, res) => {
     });
 
     console.log("🚀", nickName, "：", comment);
-    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.writeHead(200, {
+      'Content-Type': 'text/plain', 'Content-Type': contentType,
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE',
+      'Access-Control-Allow-Headers': 'Content-Type'
+    });
     res.end('Webhook triggered successfully');
   } else if (url.pathname === '/') {
     fs.readFile('html/index.html', (err, data) => {
