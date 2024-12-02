@@ -1,0 +1,386 @@
+ 
+body {
+    background: radial-gradient(220% 105% at top center, #01040d 30%, #0043b2 60%, #e96f92 85%, #ca5631);
+    background-attachment: fixed;
+    overflow: hidden;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+ 
+@keyframes rotate {
+    0% {
+        transform: perspective(400px) rotateZ(20deg) rotateX(-40deg) rotateY(0);
+    }
+ 
+    100% {
+        transform: perspective(400px) rotateZ(20deg) rotateX(-40deg) rotateY(-360deg);
+    }
+}
+ 
+.stars {
+    transform: perspective(500px);
+    transform-style: preserve-3d;
+    position: absolute;
+    bottom: 0;
+    perspective-origin: 50% 100%;
+    left: 50%;
+    animation: rotate 90s infinite linear;
+}
+ 
+.star {
+    width: 2px;
+    height: 2px;
+    background: #F7F7B6;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: 0 0 -300px;
+    transform: translate3d(0, 0, -300px);
+    backface-visibility: hidden;
+}
+ 
+.moon {
+    position: absolute;
+    z-index: -1;
+    width: 100px;
+    height: 100px;
+    background-image: linear-gradient(to right,#e4e0b7 10%,#fff 90%);
+    box-shadow: 0 0 60px 40px rgba(0,0,255,0.2),inset 0 0 20px 5px rgba(0,0,255,0.1);
+    border-radius: 50%;
+    filter: blur(2px);
+    animation: moon-move 200s linear infinite alternate;
+}
+ 
+.moon-shadow {
+    width: 3vw;
+    height: 5vw;
+    border-radius: 100%;
+    position: absolute;
+    top: 1vw;
+    left: 2.6vw;
+    background: linear-gradient(51deg, #e4e0b7, #e4e0b7, #eae895, #feff7f, #fefec6);
+}
+ 
+#moonShadow {
+    filter: url(#filter);
+}
+ 
+@keyframes moon-move {
+    0% {
+        left: -10%;
+        top: 15%;
+    }
+    50% {
+        left: 68%;
+        top: 10%;
+    }
+    75% {
+        left: 88%;
+        top: 5%;
+    }
+    100% {
+        left: 105%;
+        top: 0%;
+    }
+}
+ 
+#cloud-circle {
+    width: 200px;
+    height: 175px;
+    border-radius: 50%;
+    filter: url(#filter);
+    box-shadow: 400px 400px 60px 0px #fff;
+    position: absolute;
+    top: -320px;
+    left: -320px;
+    opacity: 0.4;
+    animation: cloud-move 60s linear infinite;
+    transform: translate3d(0,0,0);
+}
+ 
+@keyframes cloud-move {
+    from {
+        left: 100%;
+    }
+ 
+    to {
+        left: 0%;
+        opacity: 0.1;
+    }
+}
+ 
+.cloud {
+    width: 200px;
+    height: 200px;
+    filter: url(#cloudRandom);
+    background-image: radial-gradient(closest-side, #fff 20%, #fffa 60%, #fff0 90%);
+}
+ 
+#cloud-circle1 {
+    width: 200px;
+    height: 75px;
+    border-radius: 50%;
+    filter: url(#filter1);
+    box-shadow: 400px 400px 60px 0px #fff;
+    position: absolute;
+    top: -220px;
+    right: -120px;
+    opacity: 0.6;
+    animation: cloud-move1 60s linear infinite;
+    transform: translate3d(0,0,0);
+}
+ 
+@keyframes cloud-move1 {
+    from {
+        right: 100%;
+    }
+ 
+    to {
+        right: 0%;
+        opacity: 0.1;
+    }
+}
+ 
+ 
+.kmd {
+    width: 100%;
+}
+ 
+ 
+.kongmingdeng, .kongmingdeng-little {
+    position: absolute;
+    height: 5.1vw;
+    width: 3.5vw;
+    bottom: -8vw;
+    background: linear-gradient(#92090e, #ea3d2d, #fbf885);
+    animation: FlyOne 24s linear infinite;
+}
+ 
+ 
+.kmdleft {
+    border-left: 5vw solid transparent;
+    border-right: 1vw solid transparent;
+    border-bottom: 0.9vw solid #ea4c35;
+    transform: rotate(-90deg);
+    position: relative;
+    top: 2.5vw;
+    left: -3.4vw;
+}
+ 
+.kmdright {
+    border-left: 1vw solid transparent;
+    border-right: 5vw solid transparent;
+    border-bottom: 0.9vw solid #ea4c35;
+    transform: rotate(90deg);
+    position: relative;
+    top: 1.6vw;
+    left: 0.9vw;
+}
+ 
+.kmdbottom {
+    position: relative;
+    top: 3vw;
+    width: 3.5vw;
+    height: 1.2vw;
+    background: radial-gradient(#fff, #fbf885, #ea3d2d);
+    border-radius: 5vw;
+}
+ 
+.kongmingdeng {
+    z-index: 2;
+}
+ 
+.kongmingdeng:nth-child(2), .kongmingdeng:nth-child(3) {
+        animation: FlyThree 18s linear infinite;
+        animation-delay: 6s;
+        height: 3.7vw;
+        left: 5vw;
+        width: 2.5vw;
+        bottom: -10vw;
+    }
+ 
+    .kongmingdeng:nth-child(2) {
+        bottom: -7vw;
+        left: 2vw;
+        animation: FlyTwo 16s linear infinite;
+        animation-delay: 2s;
+    }
+ 
+        .kongmingdeng:nth-child(2) .kmdleft, .kongmingdeng:nth-child(3) .kmdleft {
+            border-left: 3vw solid transparent;
+            top: 1.5vw;
+            left: -2.4vw;
+        }
+ 
+        .kongmingdeng:nth-child(2) .kmdright, .kongmingdeng:nth-child(3) .kmdright {
+            border-right: 3vw solid transparent;
+            top: 0.6vw;
+            left: 0.9vw;
+        }
+ 
+        .kongmingdeng:nth-child(2) .kmdbottom, .kongmingdeng:nth-child(3) .kmdbottom {
+            top: 1.6vw;
+            height: 1vw;
+            width: 2.5vw;
+        }
+ 
+.kongmingdeng-little {
+    height: 2vw;
+    left: 5vw;
+    width: 1.2vw;
+    bottom: 5vw;
+    animation: FlyFour 18s linear infinite;
+}
+ 
+    .kongmingdeng-little .kmdleft {
+        border-left: 1.7vw solid transparent;
+        border-right: 0.3vw solid transparent;
+        border-bottom: 0.5vw solid #ea4c35;
+        top: 0.75vw;
+        left: -1.2vw;
+    }
+ 
+    .kongmingdeng-little .kmdright {
+        border-left: 0.3vw solid transparent;
+        border-right: 1.7vw solid transparent;
+        border-bottom: 0.5vw solid #ea4c35;
+        top: 0.26vw;
+        left: 0.4vw;
+    }
+ 
+    .kongmingdeng-little .kmdbottom {
+        top: 0.6vw;
+        width: 1.2vw;
+        height: 0.5vw;
+    }
+ 
+@keyframes FlyOne {
+    10% {
+        transform: translateX(7vw) translateY(-10vh) rotate(0deg);
+    }
+ 
+    40% {
+        transform: translateX(2vw) translateY(-30vh) rotate(5deg);
+    }
+ 
+    70% {
+        transform: translateX(10vw) translateY(-70vh) rotate(-5deg);
+    }
+ 
+    100% {
+        transform: translateX(3vw) translateY(-120vh) rotate(3deg);
+    }
+}
+ 
+@keyframes FlyTwo {
+    10% {
+        transform: translateX(2vw) translateY(-15vh) rotate(0deg);
+    }
+ 
+    40% {
+        transform: translateX(10vw) translateY(-60vh) rotate(5deg);
+    }
+ 
+    70% {
+        transform: translateX(3vw) translateY(-90vh) rotate(-5deg);
+    }
+ 
+    100% {
+        transform: translateX(12vw) translateY(-100vh) rotate(3deg);
+        opacity: 0.1;
+    }
+}
+ 
+@keyframes FlyThree {
+    0% {
+        transform: translateX(3vw) translateY(-10vh) rotate(0deg);
+        opacity: 1;
+    }
+
+    10% {
+        transform: translateX(7vw) translateY(-30vh) rotate(-4deg);
+        opacity: 1;
+    }
+ 
+    40% {
+        transform: translateX(1vw) translateY(-60vh) rotate(8deg);
+        opacity: 0.9;
+    }
+ 
+    70% {
+        transform: translateX(9vw) translateY(-80vh) rotate(-8deg);
+        opacity: 0.8;
+    }
+ 
+    100% {
+        transform: translateX(18vw) translateY(-100vh) rotate(3deg);
+        opacity: 0.1;
+    }
+}
+ 
+@keyframes FlyFour {
+    /* 100% {
+        transform: translateY(-100vh);
+        opacity: 0.8;
+    } */
+
+    0% {
+        opacity: 1;
+    }
+
+    20% {
+        transform: translateX(7vw) translateY(-20vh) rotate(5deg);
+        opacity: 1;
+    }
+ 
+    40% {
+        transform: translateX(-4vw) translateY(-40vh) rotate(-5deg);
+        opacity: 1;
+    }
+ 
+    60% {
+        transform: translateX(9vw) translateY(-60vh) rotate(3deg) scale(0.9);
+        opacity: 1;
+    }
+ 
+    80% {
+        transform: translateX(-9vw) translateY(-80vh) rotate(-3deg) scale(0.7);
+        opacity: 0.8;
+    }
+ 
+    100% {
+        transform: translateX(18vw) translateY(-100vh) rotate(0deg) scale(0.6);
+        opacity: 0.1;
+    }
+}
+ 
+ 
+ 
+.zhufu {
+    width: 900px;
+    margin: 30px auto;
+}
+ 
+.zhufu_box {
+    z-index: 5;
+    /* border: 1px solid; */
+    border-style: double;
+    border-radius: 10px;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: table-cell;
+    float: right;
+    font-family: "Zeyada";
+    margin-left: 20px;
+    transition: text-shadow 0.5s ease 0s;
+    padding: 45px 25px;
+    margin-top: 20px;
+    text-align: center;
+    text-shadow: 0 0 15px #000000, 0 0 20px #000d24, 0 0 30px #000d24, 0 0 40px #0043b2, 0 0 60px #0043b2, 0 0 50px #0043b2, 0 0 20px #ffffff;
+    width: 270px;
+}
+ 
+.zhufu_box:hover {
+    text-shadow: 0 0 10px #FFFFFF, 0 0 20px #FFFFFF, 0 0 30px #FFFFFF, 0 0 40px #FFFF00, 0 0 70px #FFFF00, 0 0 80px #FFFF00, 0 0 100px #FFFF00;
+}
