@@ -23,7 +23,7 @@ function numberRandom(max, min) {
 }
 
 
-function addUserKMD() {
+function addUserKMD(textValue) {
 
     let left = document.createElement('div');
     left.className = 'kmdleft';
@@ -33,6 +33,13 @@ function addUserKMD() {
 
     let bottom = document.createElement('div');
     bottom.className = 'kmdbottom';
+
+    let line = document.createElement('div');
+    line.className = 'kmdline';
+
+    let text = document.createElement('div');
+    text.className = 'kmdtext';
+    text.innerHTML = textValue;
 
     let kongMing = document.createElement('div');
 
@@ -48,6 +55,8 @@ function addUserKMD() {
     kongMing.appendChild(left);
     kongMing.appendChild(right);
     kongMing.appendChild(bottom);
+    kongMing.appendChild(line);
+    kongMing.appendChild(text);
     document.getElementById('kmd').appendChild(kongMing);
     kongMing.addEventListener('animationend', function () {
         this.remove();
@@ -58,7 +67,7 @@ $(function () {
     const ws = new WebSocket('ws://' + location.host);
     ws.onmessage = function (event) {
         console.log("🚀 ~ event:", event)
-        addUserKMD()
+        addUserKMD(JSON.parse(event.data).comment?.slice(0, 8));
     };
     for (let index = 0; index < 12; index++) {
         // addUserKMD()
@@ -88,6 +97,7 @@ $(function () {
         kongMing1.style =
             'left:' + numberRandom(150, 0) + 'vw;' +
             'bottom:' + numberRandom(-40, -105) + 'vw;' +
+            'zoom:'+ numberRandom(1.5, 0.5) +";"+
             'animation: FlyThree ' + numberRandom(50, 15) + 's linear infinite;' +
             'animation-delay:' + numberRandom(15, 1) + 's;';
 

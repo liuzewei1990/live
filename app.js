@@ -6,10 +6,14 @@ const server = http.createServer((req, res) => {
   const url = new URL(req.url, `http://${req.headers.host}`);
   const path = url.pathname.split('/');
 
+  if (req.method === "OPTIONS") {
+    res.writeHead(200)
+    return;
+  }
+
   if (path[1] === 'webhook' && path.length === 4) {
     const nickName = decodeURIComponent(path[2]);
     const comment = decodeURIComponent(path[3]);
-
     // 触发websocket的send消息
     wss.clients.forEach(client => {
       client.send(JSON.stringify({ nickName, comment }));
@@ -17,7 +21,7 @@ const server = http.createServer((req, res) => {
 
     console.log("🚀", nickName, "：", comment);
     res.writeHead(200, {
-      'Content-Type': 'text/plain', 'Content-Type': contentType,
+      'Content-Type': 'text/plain',
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE',
       'Access-Control-Allow-Headers': 'Content-Type'
