@@ -66,8 +66,17 @@ function addUserKMD(textValue) {
 $(function () {
     const ws = new WebSocket('ws://' + location.host);
     ws.onmessage = function (event) {
-        console.log("🚀 ~ event:", event)
-        addUserKMD(JSON.parse(event.data).comment?.slice(0, 8));
+        try {
+            
+            console.log("🚀 ~ event:", event);
+            let data = JSON.parse(event.data);
+            if (data.comment) {
+                addUserKMD(data.comment?.replace(/[^\u4e00-\u9fa5\d]/g, '')?.slice(0, 8));
+            }
+        } catch (error) {
+
+        }
+
     };
     for (let index = 0; index < 12; index++) {
         // addUserKMD()
@@ -97,7 +106,7 @@ $(function () {
         kongMing1.style =
             'left:' + numberRandom(150, 0) + 'vw;' +
             'bottom:' + numberRandom(-40, -105) + 'vw;' +
-            'zoom:'+ numberRandom(1.5, 0.5) +";"+
+            'zoom:' + numberRandom(2, 0.5) + ";" +
             'animation: FlyThree ' + numberRandom(50, 15) + 's linear infinite;' +
             'animation-delay:' + numberRandom(15, 1) + 's;';
 

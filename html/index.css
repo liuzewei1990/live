@@ -222,7 +222,7 @@ body {
 .kmdtext {
     font-weight: 100;
     color: #fff;
-    font-size: 14px;
+    font-size: 2vw;
     /* width: 10px; */
     text-align: center;
     /* display: flex; */
@@ -233,8 +233,8 @@ body {
     left: 50%;
     transform: translateX(-50%);
     background: #ff6200;
-    padding: 7px 8px;
-    border-radius: 7px;
+    padding: 0.5vw 0.5vw;
+    border-radius: 0.5vw;
     display: flex;
     flex-direction: column;
 }
