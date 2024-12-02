@@ -223,20 +223,16 @@ body {
     font-weight: 100;
     color: #fff;
     font-size: 2vw;
-    /* width: 10px; */
-    text-align: center;
-    /* display: flex; */
-    /* justify-content: center; */
-    /* margin: 0 auto; */
+    height: max-content;
     position: absolute;
     top: calc(100% + 33px);
     left: 50%;
     transform: translateX(-50%);
     background: #ff6200;
-    padding: 0.5vw 0.5vw;
+    padding: 1vw 0.5vw;
     border-radius: 0.5vw;
-    display: flex;
-    flex-direction: column;
+    writing-mode: vertical-rl;
+    letter-spacing:0px;
 }
 
 .kongmingdeng:nth-child(2),

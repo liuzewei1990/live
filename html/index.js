@@ -71,7 +71,8 @@ $(function () {
             console.log("🚀 ~ event:", event);
             let data = JSON.parse(event.data);
             if (data.comment) {
-                addUserKMD(data.comment?.replace(/[^\u4e00-\u9fa5\d]/g, '')?.slice(0, 8));
+                addUserKMD(data.comment);
+                // addUserKMD(data.comment?.replace(/[^\u4e00-\u9fa5\d]/g, '')?.slice(0, 10));
             }
         } catch (error) {
 
