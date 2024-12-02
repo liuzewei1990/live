@@ -70,8 +70,9 @@ $(function () {
             
             console.log("🚀 ~ event:", event);
             let data = JSON.parse(event.data);
-            if (data.comment) {
-                addUserKMD(data.comment?.replace(/[^\u4e00-\u9fa5\d，,。 ！!:：]/g, '')?.slice(0, 20));
+            if (data.comment && data.comment.length > 3 && /^\#.*?\#$/.test(data.comment)) {
+                let comment = data.comment.replace(/#/g,"")?.replace(/[^\u4e00-\u9fa5\d，,。 ！!:：]/g, '')?.slice(0, 20);
+                addUserKMD(comment);
             }
         } catch (error) {
 
