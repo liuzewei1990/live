@@ -216,12 +216,13 @@ body {
     left: 50%;
     width: 0.5px;
     height: 50px;
-    background: red;
+    background: rgb(255, 255, 255);
 }
 
 .kmdtext {
     font-weight: 100;
     color: #fff;
+    font-size: 0.2vw;
     font-size: 2vw;
     height: max-content;
     position: absolute;
@@ -229,7 +230,7 @@ body {
     left: 50%;
     transform: translateX(-50%);
     background: #ff6200;
-    padding: 1vw 0.5vw;
+    padding: 1vw 0vw;
     border-radius: 0.5vw;
     writing-mode: vertical-rl;
     letter-spacing:0px;
@@ -369,7 +370,7 @@ body {
 
 @keyframes FlyFour {
   100% {
-        transform: translateY(-100vh);
+        transform: translateY(-150vh);
         opacity: 0.8;
     }
 
