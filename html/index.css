@@ -233,7 +233,7 @@ body {
     padding: 1vw 0vw;
     border-radius: 0.5vw;
     writing-mode: vertical-rl;
-    letter-spacing:0px;
+    letter-spacing:1px;
 }
 
 .kongmingdeng:nth-child(2),

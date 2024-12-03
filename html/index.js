@@ -47,8 +47,8 @@ function addUserKMD(textValue) {
     kongMing.style =
         'width:' + numberRandom() + '%;' +
         'left:' + numberRandom(90, 10) + 'vw;' +
-        'bottom:' + numberRandom(-4, -15) + 'vw;' +
-        // 'transform: scale('+numberRandom(20,5)+');'
+        'bottom:' + numberRandom(-20, -50) + 'vw;' +
+        'transform: scale(' + numberRandom(2,1)+');' +
         'animation: FlyFour ' + numberRandom(50, 15) + 's linear;' +
         'animation-delay:' + numberRandom(1, 1) + 's;';
 
