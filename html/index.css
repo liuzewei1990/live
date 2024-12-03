@@ -215,7 +215,7 @@ body {
     top: 103%;
     left: 50%;
     width: 0.5px;
-    height: 50px;
+    height: 20px;
     background: rgb(255, 255, 255);
 }
 
@@ -223,17 +223,19 @@ body {
     /* font-weight: 100; */
     color: #fff;
     font-size: 0.2vw;
-    font-size: 2vw;
+    font-size: 2.3vw;
     height: max-content;
     position: absolute;
-    top: calc(100% + 33px);
+    top: calc(100% + 23px);
     left: 50%;
     transform: translateX(-50%);
     background: #ff6200;
-    padding: 1vw 0vw;
+    padding: 1vw 0.5vw;
     border-radius: 0.5vw;
     writing-mode: vertical-rl;
     letter-spacing:1px;
+    font-family: cursive;
+    font-weight: 600;
 }
 
 .kongmingdeng:nth-child(2),
@@ -343,7 +345,7 @@ body {
 
 @keyframes FlyThree {
   0% {
-    transform: translateX(3vw) translateY(-10vh) rotate(0deg);
+    transform: translateX(3vw) translateY(0vh) rotate(0deg);
     opacity: 1;
   }
 

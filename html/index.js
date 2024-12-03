@@ -48,7 +48,7 @@ function addUserKMD(textValue) {
         'width:' + numberRandom() + '%;' +
         'left:' + numberRandom(90, 10) + 'vw;' +
         'bottom:' + numberRandom(-20, -50) + 'vw;' +
-        'transform: scale(' + numberRandom(2,1)+');' +
+        'transform: scale(' + numberRandom(2,1.5)+');' +
         'animation: FlyFour ' + numberRandom(50, 15) + 's linear;' +
         'animation-delay:' + numberRandom(1, 1) + 's;';
 
@@ -106,9 +106,9 @@ $(function () {
         kongMing1.className = 'kongmingdeng-little';
 
         kongMing1.style =
-            'left:' + numberRandom(150, 0) + 'vw;' +
-            'bottom:' + numberRandom(-40, -105) + 'vw;' +
-            'zoom:' + numberRandom(2, 0.5) + ";" +
+            'left:' + numberRandom(100, 0) + 'vw;' +
+            'bottom:' + numberRandom(-50, -150) + 'vw;' +
+            'zoom:' + numberRandom(2, 1) + ";" +
             'animation: FlyThree ' + numberRandom(50, 15) + 's linear infinite;' +
             'animation-delay:' + numberRandom(15, 1) + 's;';
 
