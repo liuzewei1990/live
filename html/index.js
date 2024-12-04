@@ -48,7 +48,7 @@ function addUserKMD(textValue) {
         'width:' + numberRandom() + '%;' +
         'left:' + numberRandom(90, 10) + 'vw;' +
         'bottom:' + numberRandom(-20, -50) + 'vw;' +
-        'transform: scale(' + numberRandom(2,1.5)+');' +
+        'transform: scale(' + numberRandom(1.5,0.5)+');' +
         'animation: FlyFour ' + numberRandom(50, 15) + 's linear;' +
         'animation-delay:' + numberRandom(1, 1) + 's;';
 
