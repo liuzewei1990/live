@@ -1,11 +1,12 @@
 body {
-  background: radial-gradient(
+  /* background: radial-gradient(
     220% 105% at top center,
     #01040d 30%,
     #0043b2 60%,
     #e96f92 85%,
     #ca5631
-  );
+  ); */
+  background: transparent;
   background-attachment: fixed;
   overflow: hidden;
   margin: 0;
