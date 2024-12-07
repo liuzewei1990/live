@@ -92,7 +92,7 @@ $(function () {
     }
 
 
-    for (let index1 = 0; index1 < 25; index1++) {
+    for (let index1 = 0; index1 < 15; index1++) {
         let left1 = document.createElement('div');
         left1.className = 'kmdleft';
 
