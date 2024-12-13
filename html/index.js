@@ -72,7 +72,7 @@ $(function () {
             let data = JSON.parse(event.data);
             // if (data.comment && data.comment.length > 3 && /^\#.*?\#$/.test(data.comment)) {
             if (data.comment) {
-                let comment = data.comment.replace(/#/g,"")?.replace(/[^\u4e00-\u9fa5\d，,。 ！!:：]/g, '')?.slice(0, 20);
+                let comment = data.comment.replace(/#/g,"")?.replace(/[^\u4e00-\u9fa5\d，,。 ！!:：]/g, '');
                 addUserKMD(comment);
             }
         } catch (error) {
